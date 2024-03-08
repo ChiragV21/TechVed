@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jobUpdates',
     'DashBoard',
-    'CodHackApp',
+    'InterviewExperienceApp',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

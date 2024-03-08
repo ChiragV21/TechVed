@@ -1,0 +1,96 @@
+{% extends 'Dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="card bg-transparent border-0" style="max-width: 100%;">
+    <img src="{% static "Dashboard/images/Image_6.png" %}" class="card-img" style="height:600px; object-size:fit;"/>
+    <div class="card-img-overlay d-flex justify-content-center flex-column text-center">
+    </div>
+</div>
+
+<div class='container mt-4'>
+    <h5>Prepare for tech interviews for DSA (SDE @ product based companies)</h5>
+    <div class='container mt-5'>
+        <ul class="nav nav-tabs mb-3" id="myTab0" role="tablist">
+            <li class="nav-item" role="presentation">
+            <button
+                data-bs-toggle="tab"
+                class="nav-link active"
+                id="home-tab0"
+                data-bs-target="#home0"
+                type="button"
+                role="tab"
+                aria-controls="home"
+                aria-selected="true"
+            >
+            Learn & understand OOPS Language
+            </button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button
+                data-bs-toggle="tab"
+                class="nav-link"
+                id="profile-tab1"
+                data-bs-target="#profile1"
+                type="button"
+                role="tab"
+                aria-controls="profile"
+                aria-selected="false"
+            >
+            DSA & CP 
+            </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button
+                    data-bs-toggle="tab"
+                    class="nav-link"
+                    id="profile-tab2"
+                    data-bs-target="#profile2"
+                    type="button"
+                    role="tab"
+                    aria-controls="profile"
+                    aria-selected="false"
+                >
+                Core Subjects
+            </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button
+                    data-bs-toggle="tab"
+                    class="nav-link"
+                    id="profile-tab3"
+                    data-bs-target="#profile3"
+                    type="button"
+                    role="tab"
+                    aria-controls="profile"
+                    aria-selected="false"
+                >
+                Projects & Aptitude
+            </button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent0">
+            <div
+            class="tab-pane fade show active"
+            id="home0"
+            role="tabpanel"
+            aria-labelledby="home-tab0"
+            >
+            <--First Content-->
+            </div>
+            <div class="tab-pane fade" id="profile1" role="tabpanel" aria-labelledby="profile-tab1">
+                <--First Content-->
+                </div>
+
+            <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile-tab2">
+                
+            </div>
+
+            <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
+               
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
