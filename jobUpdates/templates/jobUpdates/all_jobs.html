@@ -1,0 +1,42 @@
+{% extends "Dashboard/base.html" %}
+
+{% block style %}
+<style>
+    .card{
+        width:300px;
+        height:auto:
+    }
+
+    .card-img-top{
+        width:300px;
+        height:200px;
+        transition: opacity 0.5s ease;
+    }
+
+    .card-img-top:hover{
+        opacity:0.5;
+    }
+    </style>
+{% endblock %}
+{% block content %}
+<div class='container mt-5'>
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    {% for job in all_jobs %}
+    <div class="col">
+      <div class="card mb-3 border-0 shadow">
+        <img src="{{job.image.url}}" class="card-img-top img-fluid" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">{{job.role}}</h4>
+          <h6 class="card-text">{{job.name}}</h6>
+          <h6>{{job.batch}}</h6>
+          <p>Job Location: {{job.location}}</p>
+          <div class='card-footer'>
+          <a href="{{job.url}}">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

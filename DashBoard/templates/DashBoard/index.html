@@ -1,0 +1,66 @@
+{% extends 'Dashboard/base.html' %}
+{% load static %}
+
+{% block style %}
+<style>
+    .heading{
+        text-align:center;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="card bg-transparent border-0" style="width: 100%;">
+    <img src="{% static "Dashboard/images/Background-Image.png" %}" class="card-img"/>
+    <div class="card-img-overlay d-flex justify-content-center align-items-center flex-column text-center">
+    </div>
+</div>
+
+<div class='container mt-5'>
+    <h2 class='heading'>Explore us!</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+        <div class="col">
+          <div class="card h-100 border-0 shadow">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Job Hiring</h5>
+              <p class="card-text">"Discover exciting career opportunities with our curated job listings, connecting you to your next big opportunity. Join us today!"
+              </p>
+              <a class="btn btn-dark">Explore us</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Hackathons/Coding Events</h5>
+              <p class="card-text">"Dive into the exhilarating world of hackathons and coding events, where creativity thrives and innovation takes center stage!"</p>
+              <a class="btn btn-dark">Explore us</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Explore Tech Stacks</h5>
+              <p class="card-text">Dive into the dynamic realm of tech stacks, where tools and technologies converge to shape the digital landscape of tomorrow."
+
+              </p>
+              <a class="btn btn-dark">Explore us</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Interview Preparation</h5>
+              <p class="card-text">"Gear up for success with expert tips and strategies to ace your next interview and land your dream job!"              </p>
+              <a class="btn btn-dark">Explore us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+{% endblock %}

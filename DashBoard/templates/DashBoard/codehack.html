@@ -1,0 +1,53 @@
+{% extends "Dashboard/base.html" %}
+{% load static %}
+
+{% block style %}
+<style>
+    .card{
+        width:250px;
+        height:auto:
+    }
+
+    .card {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .card-img-top{
+        width:250px;
+        height:200px;
+        transition: opacity 0.5s ease;
+    }
+
+    .card-img-top:hover{
+        opacity:0.5;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class='container mt-3'>
+    <h2>Hackathons, Programming Challenges, And Coding Competitions</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4 mt-3">
+        {% for job in all_challenges %}
+        <div class="col">
+          <div class="card mb-3 border-0 shadow">
+            <img src="{{job.images.url}}" class="card-img-top img-fluid" alt="...">
+            <div class="card-body text-center">
+              <h6 class="card-text">{{job.event_type}}</h6>
+              <h6 class="card-text">{{job.name}}</h6>
+              <h6>Duration:<h6><br>
+              <h6 class="card-text">{{job.start_date}}-{{job.end_date}}</h6>
+              <div class='card-footer'>
+                <a href="{{job.url}}" class='btn btn-success'>Register Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+</div>
+{% endblock %}
