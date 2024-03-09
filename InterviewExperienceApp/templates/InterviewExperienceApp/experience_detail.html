@@ -1,0 +1,28 @@
+{% extends 'Dashboard/base.html' %}
+{% load static %}
+{% block title %}
+<title>{{ post.title }}</title>
+{% endblock %}
+
+{% block content %}
+
+<h3 style='text-align:center; margin-top:10px;'>Company Details</h3>
+<div class='container mt-3 justify-content-center'>
+    <p>Company Name: {{post.company_name}}</p>
+    <p>Role: {{post.role}}</p>
+    <p>Year of Experinece: {{post.experience}}</p>
+    <p>Date Posted: {{post.created_date}}</p>
+</div>
+<hr>
+
+<h3 style='text-align:center;'>Interview Experience</h3>
+<div class='container mt-4'>
+    {% autoescape off %}
+    {{post.content}}
+    {% endautoescape %}
+    
+    <center>
+        <a href='{% url 'all_posts' %}' class='btn btn-primary'>More Interview Experience</a>
+    </center>
+</div>
+{% endblock %}

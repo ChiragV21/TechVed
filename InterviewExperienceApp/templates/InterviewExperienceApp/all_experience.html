@@ -1,0 +1,46 @@
+{% extends 'Dashboard/base.html' %}
+{% load static %}
+
+{% block style %}
+<style>
+    <style>
+        .card {
+            transition: all 0.3s ease-in-out;
+        }
+    
+        .card:hover {
+            transform: translateY(-5px);
+        }
+    
+        .card:nth-child(odd) {
+            background-color: #f1f1f1; /* Light gray for odd cards */
+        }
+    
+        .card:nth-child(even) {
+            background-color: #e0e0e0; /* Lighter gray for even cards */
+        }
+    </style>
+    
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row row-cols-1 row-cols-md-4 g-4 mt-3">
+        {% for experience in posts %}
+        <div class="col">
+            <div class="card mb-3 border-0 shadow">
+                <div class="card-body text-center">
+                    <h6 class="card-text">{{ experience.company_name }}</h6>
+                    <h6 class="card-text">{{ experience.role }}</h6>
+                    <h6>Experience: {{ experience.experience }}</h6>
+                    <h6>Date of Posted: {{ experience.created_date }}</h6>
+                    <a href="{% url 'post_detail' experience.slug %}" class='btn btn-success'>Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
