@@ -25,10 +25,17 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="container mt-5 mb-5">
-    <div class="row row-cols-1 row-cols-md-4 g-4 mt-3">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search by Company Name">
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-4 g-4 mt-3" id="cardContainer">
         {% for experience in posts %}
-        <div class="col">
+        <div class="col company-card" data-company="{{ experience.company_name }}">
             <div class="card mb-3 border-0 shadow">
                 <div class="card-body text-center">
                     <h6 class="card-text">{{ experience.company_name }}</h6>
@@ -41,6 +48,31 @@
         </div>
         {% endfor %}
     </div>
+
+    {% if not posts %}
+    <div class="alert alert-info mt-3" role="alert">
+        No job experiences available.
+    </div>
+    {% endif %}
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const companyCards = document.querySelectorAll('.company-card');
+
+        searchInput.addEventListener('input', function() {
+            const searchText = this.value.trim().toLowerCase();
+            companyCards.forEach(function(card) {
+                const company = card.dataset.company.toLowerCase();
+                if (company.includes(searchText)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
 
 {% endblock %}

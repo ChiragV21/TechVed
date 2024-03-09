@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'DashBoard',
     'InterviewExperienceApp',
     'ckeditor',
+    'users_app',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -124,7 +127,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 import os
 STATIC_URL = '/static/'
 STATICFILES_ROOT = os.path.join(BASE_DIR, 'static/')
-
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CRISPY_TEMPLATE_PACK= "bootstrap5"
+CRISPY_ALLOWED_TEMPLATE_PACKS= "bootstrap5"
+LOGIN_REDIRECT_URL='Dashboard'
+LOGIN_URL="login"
+LOGOUT_REDIRECT_URL='Dashboard'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
